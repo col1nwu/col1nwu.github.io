@@ -164,8 +164,23 @@
         </div> -->
       </div>
       <!-- 科研经历 -->
-      <div class="main-item w">
+      <div class="main-item w" id="res">
         <h1>Research</h1>
+        <ul>
+          <li>
+            <div class="res-header">
+              <div class="res-arrow">
+                <i class="fa-solid fa-play"></i>
+              </div>
+              <div>Dynamic Lambda</div>
+            </div>
+            <div class="res-content">Text</div>
+          </li>
+          <!-- <li>
+            <div class="res-header">Research 1</div>
+            <div class="res-content">Text</div>
+          </li> -->
+        </ul>
       </div>
       <!-- 发表论文 -->
       <div class="pub main-item w" id="pub">
@@ -287,6 +302,44 @@
         } else {
           likeBox.fadeOut("fast");
           clearTimeout(likeTimer);
+        }
+      });
+
+      $(".res-header").on("mouseover", function () {
+        let block = $(this).parent();
+        block.css({ background: "#cccccc" });
+      });
+
+      $(".res-header").on("mouseout", function () {
+        let block = $(this).parent();
+        block.css({ background: "#86b3d1" });
+      });
+
+      $(".res-header").on("click", function () {
+        let content = $(this).next();
+        let arrow = $(this).children(".res-arrow");
+        if (content.css("display") == "none") {
+          content.slideDown();
+          arrow.animate(
+            { deg: 90 },
+            {
+              duration: "normal",
+              step: function (now) {
+                $(this).css({ transform: "rotate(" + now + "deg)" });
+              },
+            }
+          );
+        } else {
+          content.slideUp();
+          arrow.animate(
+            { deg: 0 },
+            {
+              duration: "normal",
+              step: function (now) {
+                $(this).css({ transform: "rotate(" + now + "deg)" });
+              },
+            }
+          );
         }
       });
     </script>

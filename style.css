@@ -8,12 +8,12 @@
 
 a,
 button {
-  color: #123c69;
+  color: #2d283e;
   text-decoration: none;
 }
 
 a:visited {
-  color: #123c69;
+  color: #2d283e;
 }
 
 li {
@@ -46,14 +46,14 @@ textarea {
 
 body {
   margin: 0 auto;
-  background-color: #eee2dc;
-  color: #123c69;
+  background-color: #99ced3;
+  color: #2d283e;
 }
 
 .main {
   width: 1100px;
   margin: 0 auto;
-  background-color: #edc7b7;
+  background-color: #86b3d1;
 }
 
 .w {
@@ -74,7 +74,6 @@ body {
   width: 40px;
   text-align: center;
   line-height: 40px;
-  border: 2px solid #eee2dc;
   border-radius: 50%;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px;
 }
@@ -96,7 +95,7 @@ body {
   text-align: center;
   line-height: 45px;
   background: transparent;
-  border: 2px solid #eee2dc;
+  border: none;
   border-radius: 50%;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px;
 }
@@ -213,7 +212,6 @@ body {
   padding: 10px 0 10px 0;
   width: 140px;
   height: 30px;
-  background-color: #edc7b7;
 }
 
 .social-bar > a {
@@ -229,8 +227,8 @@ body {
 .nav {
   position: sticky;
   top: 0;
-  margin-top: 50px;
-  background-color: #bab2b5;
+  margin: 50px 0;
+  background-color: #4d6d9a;
 }
 
 .nav a {
@@ -242,12 +240,12 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 1.1em;
   text-align: center;
-  background-color: #bab2b5;
+  background-color: #4d6d9a;
 }
 
 .nav a:hover {
-  color: #eee2dc;
-  background-color: #123c69;
+  color: #99ced3;
+  background-color: #2d283e;
 }
 
 .nav a:nth-child(1) {
@@ -261,7 +259,7 @@ body {
 
 .main-item > h1 {
   margin-bottom: 15px;
-  font-size: 1.35em;
+  font-size: 1.5em;
   font-family: "Poppins", sans-serif;
 }
 
@@ -291,6 +289,43 @@ body {
 
 .projDesc {
   padding: 20px;
+}
+
+#res li {
+  display: block;
+  margin: 10px 0;
+  border-radius: 10px;
+}
+
+.res-header {
+  position: relative;
+  height: 35px;
+  line-height: 35px;
+}
+
+.res-header:hover {
+  cursor: pointer;
+}
+
+.res-arrow {
+  float: left;
+  height: 35px;
+  width: 25px;
+  line-height: 35px;
+  text-align: center;
+}
+
+.res-header div:nth-child(2) {
+  float: left;
+  margin: 0 0 0 20px;
+  font-size: 1.15em;
+  font-weight: normal;
+}
+
+.res-content {
+  display: none;
+  margin: 0 0 0 45px;
+  padding: 10px 10px 10px 0;
 }
 
 .cutline {
