@@ -142,26 +142,26 @@ body {
   text-align: center;
 }
 
-#commentBox {
+#comment-box {
   width: 600px;
   height: 400px;
 }
 
-#commentBox div:nth-child(2) {
+#comment-box div:nth-child(2) {
   height: 1em;
   margin: 30px 0 20px 25px;
   line-height: 1em;
   text-align: left;
 }
 
-#commentBox textarea {
+#comment-box textarea {
   display: block;
   width: 550px;
   height: 250px;
   margin: 0 auto;
 }
 
-#commentBox button {
+#comment-box button {
   display: block;
   float: right;
   width: 85px;
@@ -189,7 +189,7 @@ body {
   display: block;
 }
 
-.topRight {
+.top-right {
   position: relative;
   float: right;
   width: 125px;
@@ -206,7 +206,7 @@ body {
   background-size: contain;
 }
 
-.socialBar {
+.social-bar {
   position: absolute;
   left: 50%;
   margin: 0 0 0 -70px;
@@ -216,7 +216,7 @@ body {
   background-color: #edc7b7;
 }
 
-.socialBar > a {
+.social-bar > a {
   display: block;
   float: left;
   width: 25px;

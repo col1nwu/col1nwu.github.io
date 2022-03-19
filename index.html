@@ -53,7 +53,7 @@
       <div class="close"><i class="fa-solid fa-xmark"></i></div>
       <div>Thank you for your support!</div>
     </div>
-    <div class="dialog" id="commentBox">
+    <div class="dialog" id="comment-box">
       <div class="close"><i class="fa-solid fa-xmark"></i></div>
       <div>Your comment:</div>
       <textarea placeholder="Type in..."></textarea>
@@ -78,11 +78,11 @@
             Agricultural University
           </h2>
         </div>
-        <div class="topRight">
+        <div class="top-right">
           <div class="picture" href="#"></div>
-          <div class="socialBar">
+          <div class="social-bar">
             <a
-              href="https://www.linkedin.com/in/daizong-colin-wu-778613172/"
+              href="https://www.linkedin.com/in/daizong-wu"
               target="_blank"
               title="LinkedIn"
               style="color: #2867b2"
@@ -90,7 +90,7 @@
               <i class="fa-brands fa-linkedin fa-lg"></i>
             </a>
             <a
-              href="https://github.com/CoL1n23"
+              href="https://github.com/col1nwu"
               target="_blank"
               title="GitHub"
               style="color: #333333"
@@ -207,7 +207,7 @@
       "use strict";
 
       let picture = $(".picture");
-      let socialBar = $(".socialBar");
+      let socialBar = $(".social-bar");
       socialBar.hide();
       picture.on("mouseover", () => {
         socialBar.show();
@@ -243,13 +243,13 @@
 
       // “评论”按钮点击时弹窗
       let commentButton = $("#comment");
-      let commentBox = $("#commentBox");
+      let commentBox = $("#comment-box");
       commentButton.on("click", () => {
         $(".main").css({ filter: "blur(5px)" });
         $(".top").css({ filter: "blur(5px)" });
         $(".sidebar").css({ filter: "blur(5px)" });
         commentBox.show("normal");
-        let closeButton = $("#commentBox .close");
+        let closeButton = $("#comment-box .close");
         closeButton.on("click", () => {
           closeButton.parent().hide("normal");
           $(".main").css({ filter: "none" });
