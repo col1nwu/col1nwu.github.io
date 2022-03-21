@@ -228,7 +228,7 @@ body {
   position: sticky;
   top: 0;
   margin: 50px 0;
-  background-color: #e7717d;
+  background-color: #9d2235;
 }
 
 .nav a {
@@ -240,11 +240,12 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 1.1em;
   text-align: center;
+  color: #ffc72c;
 }
 
 .nav a:hover {
-  color: #c3073f;
-  background-color: #2d283e;
+  color: #9d2235;
+  background-color: #ffc72c;
 }
 
 .nav a:nth-child(1) {
@@ -260,7 +261,7 @@ body {
   margin-bottom: 15px;
   font-size: 1.5em;
   font-family: "Poppins", sans-serif;
-  color: #c3073f;
+  color: #9d2235;
 }
 
 .subproj {
