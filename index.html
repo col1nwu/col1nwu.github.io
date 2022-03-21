@@ -174,7 +174,13 @@
               </div>
               <div>Dynamic Lambda</div>
             </div>
-            <div class="res-content">Text</div>
+            <div class="res-content">
+              <p>
+                This project is within the scope of distributed computing. We
+                examined the source code of Apache Hadoop and came up with some
+                drawbacks of the current implementation.
+              </p>
+            </div>
           </li>
           <!-- <li>
             <div class="res-header">Research 1</div>
@@ -307,18 +313,21 @@
 
       $(".res-header").on("mouseover", function () {
         let block = $(this).parent();
-        block.css({ background: "#cccccc" });
+        block.css({ background: "#99ced3" });
       });
 
       $(".res-header").on("mouseout", function () {
         let block = $(this).parent();
-        block.css({ background: "#86b3d1" });
+        let visible = $(this).next().css("display");
+        if (visible === "none") {
+          block.css({ background: "#86b3d1" });
+        }
       });
 
       $(".res-header").on("click", function () {
         let content = $(this).next();
         let arrow = $(this).children(".res-arrow");
-        if (content.css("display") == "none") {
+        if (content.css("display") === "none") {
           content.slideDown();
           arrow.animate(
             { deg: 90 },
