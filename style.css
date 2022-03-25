@@ -176,12 +176,22 @@ body {
   float: left;
 }
 
-.title h1 {
-  display: block;
+.name {
   margin-bottom: 25px;
-  font-family: "Poppins", sans-serif;
+}
+
+.name div {
+  float: left;
   font-size: 2.5em;
   font-weight: bold;
+}
+
+.name .english {
+  font-family: "Poppins", sans-serif;
+}
+
+.name .chinese {
+  margin: 0 0 0 30px;
 }
 
 .title h2 {
@@ -228,7 +238,7 @@ body {
   position: sticky;
   top: 0;
   margin: 50px 0;
-  background-color: #9d2235;
+  background-color: #990000;
 }
 
 .nav a {
@@ -240,12 +250,12 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 1.1em;
   text-align: center;
-  color: #ffc72c;
+  color: #ffcc00;
 }
 
 .nav a:hover {
-  color: #9d2235;
-  background-color: #ffc72c;
+  color: #990000;
+  background-color: #ffcc00;
 }
 
 .nav a:nth-child(1) {
@@ -261,7 +271,7 @@ body {
   margin-bottom: 15px;
   font-size: 1.5em;
   font-family: "Poppins", sans-serif;
-  color: #9d2235;
+  color: #990000;
 }
 
 .subproj {
@@ -292,23 +302,23 @@ body {
   padding: 20px;
 }
 
-#res li {
+.list li {
   display: block;
   margin: 10px 0;
   border-radius: 10px;
 }
 
-.res-header {
+.list-header {
   position: relative;
   height: 35px;
   line-height: 35px;
 }
 
-.res-header:hover {
+.list-header:hover {
   cursor: pointer;
 }
 
-.res-arrow {
+.list-arrow {
   float: left;
   height: 35px;
   width: 25px;
@@ -316,17 +326,29 @@ body {
   text-align: center;
 }
 
-.res-header div:nth-child(2) {
+.list-header div:nth-child(2) {
   float: left;
   margin: 0 0 0 20px;
   font-size: 1.15em;
   font-weight: normal;
 }
 
-.res-content {
+.list-header div:nth-child(2) a {
+  font-size: 1em;
+}
+
+.list-content {
   display: none;
   margin: 0 0 0 45px;
   padding: 10px 10px 10px 0;
+}
+
+.list-content b {
+  font-weight: bold;
+}
+
+.list-content a {
+  color: #1772d0;
 }
 
 .cutline {

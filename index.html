@@ -64,7 +64,10 @@
       <!-- 头部标题 -->
       <div class="header w clearfix">
         <div class="title">
-          <h1>Daizong Wu</h1>
+          <div class="name clearfix">
+            <div class="english">Daizong Wu</div>
+            <div class="chinese">吴岱宗</div>
+          </div>
           <h2>
             Master of Science in Computer Science, University of Southern
             California
@@ -166,15 +169,15 @@
       <!-- 科研经历 -->
       <div class="main-item w" id="res">
         <h1>Research</h1>
-        <ul>
+        <ul class="list">
           <li>
-            <div class="res-header">
-              <div class="res-arrow">
+            <div class="list-header">
+              <div class="list-arrow">
                 <i class="fa-solid fa-play"></i>
               </div>
               <div>Dynamic Lambda</div>
             </div>
-            <div class="res-content">
+            <div class="list-content">
               <p>
                 This project is within the scope of distributed computing. We
                 examined the source code of Apache Hadoop and came up with some
@@ -191,10 +194,46 @@
       <!-- 发表论文 -->
       <div class="pub main-item w" id="pub">
         <h1>Publications</h1>
+        <ul class="list">
+          <li>
+            <div class="list-header">
+              <div class="list-arrow">
+                <i class="fa-solid fa-play"></i>
+              </div>
+              <div>Motion of an Object in Gravity Tunnels</div>
+            </div>
+            <div class="list-content">
+              <p><b>Daizong Wu</b>, Yuying Liu</p>
+              <p>
+                PHYSICS AND ENGINEERING, Vol. 01, 2020, PP 73-79 (in Chinese)
+              </p>
+              <p>
+                <a
+                  href="https://www.cnki.net/KCMS/detail/detail.aspx?filename=GKWL202001013&dbname=cjfdtotal"
+                  target="_blank"
+                >
+                  Click here for more details
+                </a>
+              </p>
+            </div>
+          </li>
+        </ul>
       </div>
       <!-- 额外补充 -->
       <div class="extra main-item w" id="extra">
         <h1>Extra</h1>
+        <ul class="list">
+          <li id="resume">
+            <div class="list-header">
+              <div class="list-arrow">
+                <i class="fa-solid fa-play"></i>
+              </div>
+              <div>
+                <a href="./file/resume.pdf" target="_blank">Résumé</a>
+              </div>
+            </div>
+          </li>
+        </ul>
       </div>
       <!-- 分割线 -->
       <div class="cutline"></div>
@@ -311,22 +350,22 @@
         }
       });
 
-      $(".res-header").on("mouseover", function () {
+      $(".list-header").on("mouseover", function () {
         let block = $(this).parent();
         block.css({ background: "#e3e2df" });
       });
 
-      $(".res-header").on("mouseout", function () {
+      $(".list-header").on("mouseout", function () {
         let block = $(this).parent();
         let visible = $(this).next().css("display");
-        if (visible === "none") {
+        if (typeof visible == "undefined" || visible === "none") {
           block.css({ background: "#c5c6c7" });
         }
       });
 
-      $(".res-header").on("click", function () {
+      $(".list-header").on("click", function () {
         let content = $(this).next();
-        let arrow = $(this).children(".res-arrow");
+        let arrow = $(this).children(".list-arrow");
         if (content.css("display") === "none") {
           content.slideDown();
           arrow.animate(
@@ -351,6 +390,8 @@
           );
         }
       });
+
+      $("#resume").children(".list-header").off("click");
     </script>
   </body>
 </html>
