@@ -192,6 +192,7 @@ body {
 
 .name .chinese {
   margin: 0 0 0 30px;
+  font-weight: normal;
 }
 
 .title h2 {
@@ -349,6 +350,11 @@ body {
 
 .list-content a {
   color: #1772d0;
+}
+
+#resume a {
+  display: block;
+  width: 950px;
 }
 
 .cutline {
