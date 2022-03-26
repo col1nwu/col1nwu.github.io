@@ -242,8 +242,7 @@ body {
   background-color: #990000;
 }
 
-.nav a {
-  display: block;
+.nav div {
   float: left;
   padding: 0.65em 30px;
   height: 30px;
@@ -254,12 +253,13 @@ body {
   color: #ffcc00;
 }
 
-.nav a:hover {
+.nav div:hover {
+  cursor: pointer;
   color: #990000;
   background-color: #ffcc00;
 }
 
-.nav a:nth-child(1) {
+.nav div:nth-child(1) {
   margin: 0 0 0 100px;
 }
 

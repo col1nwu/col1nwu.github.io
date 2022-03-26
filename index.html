@@ -113,11 +113,11 @@
       </div>
       <!-- 导航栏 -->
       <div class="nav w clearfix">
-        <a href="#intro">About Me</a>
-        <a href="#proj">Projects</a>
-        <a href="#res">Research</a>
-        <a href="#pub">Publications</a>
-        <a href="#extra">Extra</a>
+        <div>About Me</div>
+        <div>Projects</div>
+        <div>Research</div>
+        <div>Publications</div>
+        <div>Extra</div>
       </div>
       <!-- 个人简介 -->
       <div class="intro main-item w" id="intro">
@@ -340,6 +340,18 @@
         }
       });
 
+      // 导航栏顺滑
+      $(".nav")
+        .children()
+        .on("click", function () {
+          let index = $(this).index();
+          $(".main-item").get(index).scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+          });
+        });
+
+      // 列表动画
       $(".list-header").on("mouseover", function () {
         let block = $(this).parent();
         block.css({ background: "#e3e2df" });
