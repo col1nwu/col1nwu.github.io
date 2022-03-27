@@ -68,14 +68,17 @@ body {
   width: 40px;
 }
 
-.top a {
-  display: block;
+.top div {
   height: 40px;
   width: 40px;
   text-align: center;
   line-height: 40px;
   border-radius: 50%;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px;
+}
+
+.top div:hover {
+  cursor: pointer;
 }
 
 .sidebar {
