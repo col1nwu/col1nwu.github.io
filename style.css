@@ -1,3 +1,11 @@
+:root {
+  --background: #f1f1f1;
+  --center-background: #c5c6c7;
+  --header: #990000;
+  --header-text: #ffcc00;
+  --text: #2d283e;
+}
+
 * {
   font-family: "Lato", sans-serif;
   margin: 0;
@@ -8,12 +16,12 @@
 
 a,
 button {
-  color: #2d283e;
+  color: var(--text);
   text-decoration: none;
 }
 
 a:visited {
-  color: #2d283e;
+  color: var(--text);
 }
 
 li {
@@ -31,7 +39,6 @@ textarea {
   padding: 10px;
   border: 0;
   border-radius: 5px;
-  background-color: #f1f1f1;
   resize: none;
   outline: none;
 }
@@ -46,14 +53,14 @@ textarea {
 
 body {
   margin: 0 auto;
-  background-color: #f1f1f1;
-  color: #2d283e;
+  background-color: var(--background);
+  color: var(--text);
 }
 
 .main {
   width: 1100px;
   margin: 0 auto;
-  background-color: #c5c6c7;
+  background-color: var(--center-background);
 }
 
 .w {
@@ -118,7 +125,7 @@ body {
   width: 400px;
   height: 250px;
   border-radius: 10px;
-  background: #eee2dc;
+  background: var(--background);
   z-index: 2;
 }
 
@@ -242,7 +249,7 @@ body {
   position: sticky;
   top: 0;
   margin: 50px 0;
-  background-color: #990000;
+  background-color: var(--header);
 }
 
 .nav div {
@@ -253,13 +260,13 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 1.1em;
   text-align: center;
-  color: #ffcc00;
+  color: var(--header-text);
 }
 
 .nav div:hover {
   cursor: pointer;
-  color: #990000;
-  background-color: #ffcc00;
+  color: var(--header);
+  background-color: var(--header-text);
 }
 
 .nav div:nth-child(1) {
@@ -275,7 +282,7 @@ body {
   margin-bottom: 15px;
   font-size: 1.5em;
   font-family: "Poppins", sans-serif;
-  color: #990000;
+  color: var(--header);
 }
 
 .subproj {
@@ -363,7 +370,7 @@ body {
 .cutline {
   width: 1000px;
   margin: 50px auto 0;
-  border-top: 2px solid #eee2dc;
+  border-top: 2px solid var(--background);
 }
 
 .footer {

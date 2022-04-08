@@ -8,7 +8,7 @@
 
     <link rel="icon" type="image/x-icon" href="./image/favicon.ico" />
 
-    <!-- 从Google引入字体 -->
+    <!-- 引入 Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,13 +18,13 @@
 
     <link rel="stylesheet" href="style.css" />
 
-    <!-- 引入Font Awesome -->
+    <!-- 引入 Font Awesome -->
     <script
       src="https://kit.fontawesome.com/93bf627268.js"
       crossorigin="anonymous"
     ></script>
 
-    <!-- 引入jQuery -->
+    <!-- 引入 jQuery -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
       integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
@@ -124,12 +124,11 @@
         <h1>About Me</h1>
         <p>
           My name is Daizong Wu, and you can call me Colin if you want. I come
-          from Hangzhou, the capital of Zhejiang province. It's a beautiful and
-          viable city on the east coast of China.
+          from Hangzhou, the capital of Zhejiang province.
           <br /><br />
           I'm currently a graduate student studying Computer Science at USC
           Viterbi School of Engineering. I was a Software Engineer Intern at
-          NetEase Youdao from Sept 2021 to Dec 2021 before I graduated from
+          NetEase Youdao from Sept 2021 to Dec 2021 after I graduated from
           Purdue University with Bachelor's degrees in Computer Science &
           Agricultural Engineering.
           <br /><br />
@@ -316,18 +315,28 @@
 
       // “点赞”按钮
       let likeButton = $("#like");
-      let liked = false;
+      let liked = localStorage.getItem("liked");
+      if (liked === "true") {
+        likeButton.html('<i class="fas fa-heart fa-lg"></i>');
+        likeButton.css({ color: "#fc8bab" });
+        likeButton.css({ borderColor: "#eee2dc" });
+      } else {
+        likeButton.html('<i class="far fa-heart fa-lg"></i>');
+        likeButton.css({ color: "#123c69" });
+        likeButton.css({ borderColor: "#eee2dc" });
+      }
       likeButton.on("click", () => {
-        if (liked === false) {
-          likeButton.html('<i class="fas fa-heart fa-lg"></i>');
-          likeButton.css({ color: "#fc8bab" });
-          likeButton.css({ borderColor: "#eee2dc" });
-          liked = true;
-        } else {
+        liked = localStorage.getItem("liked");
+        if (liked === "true") {
           likeButton.html('<i class="far fa-heart fa-lg"></i>');
           likeButton.css({ color: "#123c69" });
           likeButton.css({ borderColor: "#eee2dc" });
-          liked = false;
+          localStorage.setItem("liked", "false");
+        } else {
+          likeButton.html('<i class="fas fa-heart fa-lg"></i>');
+          likeButton.css({ color: "#fc8bab" });
+          likeButton.css({ borderColor: "#eee2dc" });
+          localStorage.setItem("liked", "true");
         }
       });
 
@@ -335,7 +344,8 @@
       $("#likeBox .close").hide();
       let likeTimer;
       likeButton.on("click", () => {
-        if (liked === true) {
+        liked = localStorage.getItem("liked");
+        if (liked === "true") {
           likeBox.fadeIn("fast");
           likeTimer = setTimeout(() => {
             likeBox.fadeOut("fast");
