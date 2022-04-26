@@ -4,6 +4,7 @@
   --header: #990000;
   --header-text: #ffcc00;
   --text: #2d283e;
+  --a-color: #1772d0;
 }
 
 * {
@@ -14,14 +15,12 @@
   font-weight: normal;
 }
 
-a,
-button {
-  color: var(--text);
+a, button {
   text-decoration: none;
 }
 
-a:visited {
-  color: var(--text);
+a, a:visited {
+  color: var(--a-color);
 }
 
 li {
@@ -358,13 +357,10 @@ body {
   font-weight: bold;
 }
 
-.list-content a {
-  color: #1772d0;
-}
-
 #resume a {
   display: block;
   width: 950px;
+  color: var(--text);
 }
 
 .cutline {

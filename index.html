@@ -128,10 +128,10 @@
           <br /><br />
           I'm currently a graduate student studying Computer Science at USC
           Viterbi School of Engineering. I was a Software Engineer Intern at
-          NetEase Youdao from Sept 2021 to Dec 2021 after I graduated from
-          Purdue University with Bachelor's degrees in Computer Science &
-          Agricultural Engineering.
-          <br /><br />
+          <a href="https://www.youdao.com/" target="_blank">NetEase Youdao</a>
+          from Sept 2021 to Dec 2021 after I graduated from Purdue University
+          with Bachelor's degrees in Computer Science & Agricultural
+          Engineering. <br /><br />
           I mainly code in Java and have many experiences with the Spring Boot
           framework to build back-end applications. I also enjoy writing Machine
           Learning algorithms in Python and creating websites.
@@ -168,9 +168,28 @@
             </div>
             <div class="list-content">
               <p>
+                I worked with
+                <a
+                  href="https://www.cs.purdue.edu/homes/pfonseca/"
+                  target="_blank"
+                >
+                  Prof. Pedro Fonseca
+                </a>
+                in his Reliable and Secure Systems Lab at Purdue University for
+                7 months.
+              </p>
+              <p>
                 This project is within the scope of distributed computing. We
                 examined the source code of Apache Hadoop and came up with some
                 drawbacks of the current implementation.
+              </p>
+              <p>
+                <a
+                  href="https://github.com/col1nwu/DynamicLambda"
+                  target="_blank"
+                >
+                  Click here for more details
+                </a>
               </p>
             </div>
           </li>
@@ -255,22 +274,6 @@
     <script>
       "use strict";
 
-      let picture = $(".picture");
-      let socialBar = $(".social-bar");
-      socialBar.hide();
-      picture.on("mouseover", () => {
-        socialBar.show();
-      });
-      picture.on("mouseout", () => {
-        socialBar.hide();
-      });
-      socialBar.on("mouseover", () => {
-        socialBar.show();
-      });
-      socialBar.on("mouseout", () => {
-        socialBar.hide();
-      });
-
       // “回顶部” 按钮
       let topButton = $(".top div");
       topButton.hide();
@@ -315,7 +318,8 @@
 
       // “点赞”按钮
       let likeButton = $("#like");
-      let liked = localStorage.getItem("liked");
+      const likeKey = "colin_web_liked";
+      let liked = localStorage.getItem(likeKey);
       if (liked === "true") {
         likeButton.html('<i class="fas fa-heart fa-lg"></i>');
         likeButton.css({ color: "#fc8bab" });
@@ -326,17 +330,17 @@
         likeButton.css({ borderColor: "#eee2dc" });
       }
       likeButton.on("click", () => {
-        liked = localStorage.getItem("liked");
+        liked = localStorage.getItem(likeKey);
         if (liked === "true") {
           likeButton.html('<i class="far fa-heart fa-lg"></i>');
           likeButton.css({ color: "#123c69" });
           likeButton.css({ borderColor: "#eee2dc" });
-          localStorage.setItem("liked", "false");
+          localStorage.setItem(likeKey, "false");
         } else {
           likeButton.html('<i class="fas fa-heart fa-lg"></i>');
           likeButton.css({ color: "#fc8bab" });
           likeButton.css({ borderColor: "#eee2dc" });
-          localStorage.setItem("liked", "true");
+          localStorage.setItem(likeKey, "true");
         }
       });
 
