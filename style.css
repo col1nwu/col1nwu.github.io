@@ -17,10 +17,7 @@
 
 a, button {
   text-decoration: none;
-}
-
-a, a:visited {
-  color: var(--a-color);
+  color: var(--text);
 }
 
 li {
@@ -60,6 +57,10 @@ body {
   width: 1100px;
   margin: 0 auto;
   background-color: var(--center-background);
+}
+
+.main a, .main a:visited {
+  color: var(--a-color);
 }
 
 .w {
@@ -221,7 +222,7 @@ body {
   width: 125px;
   height: 175px;
   margin: 10px 0 0 0;
-  background: url(./image/my_pic.jpg) no-repeat;
+  background: url(./images/my_pic.jpg) no-repeat;
   background-size: contain;
 }
 
@@ -386,7 +387,7 @@ body {
   height: 70px;
   width: 250px;
   margin: auto;
-  background: url(./image/usc.png) no-repeat center;
+  background: url(./images/usc.png) no-repeat center;
   background-size: auto 80px;
 }
 
@@ -395,7 +396,7 @@ body {
   height: 70px;
   width: 280px;
   margin: auto;
-  background: url(./image/purdue.png) no-repeat center;
+  background: url(./images/purdue.png) no-repeat center;
   background-size: auto 50px;
 }
 
@@ -404,6 +405,6 @@ body {
   height: 70px;
   width: 250px;
   margin: auto;
-  background: url(./image/cau.png) no-repeat center;
+  background: url(./images/cau.png) no-repeat center;
   background-size: auto 90px;
 }

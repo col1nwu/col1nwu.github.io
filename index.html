@@ -6,7 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Daizong Wu's Homepage</title>
 
-    <link rel="icon" type="image/x-icon" href="./image/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./images/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./images/favicon/site.webmanifest" />
 
     <!-- 引入 Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -274,6 +291,8 @@
     <script>
       "use strict";
 
+      const textColor = "#2d283e";
+
       // “回顶部” 按钮
       let topButton = $(".top div");
       topButton.hide();
@@ -283,14 +302,6 @@
         } else {
           topButton.hide();
         }
-      });
-      topButton.on("mouseover", () => {
-        topButton.html("Top");
-        topButton.css({ fontSize: "18px", fontWeight: "bold" });
-      });
-      topButton.on("mouseout", () => {
-        topButton.html('<i class="fas fa-arrow-up fa-lg"></i>');
-        topButton.css({ fontSize: "20px", fontWeight: "normal" });
       });
       topButton.on("click", () => {
         window.scrollTo({
@@ -323,23 +334,20 @@
       if (liked === "true") {
         likeButton.html('<i class="fas fa-heart fa-lg"></i>');
         likeButton.css({ color: "#fc8bab" });
-        likeButton.css({ borderColor: "#eee2dc" });
       } else {
         likeButton.html('<i class="far fa-heart fa-lg"></i>');
-        likeButton.css({ color: "#123c69" });
-        likeButton.css({ borderColor: "#eee2dc" });
+        likeButton.css({ color: textColor });
       }
+
       likeButton.on("click", () => {
         liked = localStorage.getItem(likeKey);
         if (liked === "true") {
           likeButton.html('<i class="far fa-heart fa-lg"></i>');
-          likeButton.css({ color: "#123c69" });
-          likeButton.css({ borderColor: "#eee2dc" });
+          likeButton.css({ color: textColor });
           localStorage.setItem(likeKey, "false");
         } else {
           likeButton.html('<i class="fas fa-heart fa-lg"></i>');
           likeButton.css({ color: "#fc8bab" });
-          likeButton.css({ borderColor: "#eee2dc" });
           localStorage.setItem(likeKey, "true");
         }
       });
