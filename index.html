@@ -51,26 +51,43 @@
   </head>
   <body>
     <!-- 右侧导航栏 -->
-    <div class="top">
-      <div>
-        <i class="fas fa-arrow-up fa-lg"></i>
-      </div>
-    </div>
-    <div class="sidebar">
-      <a href="mailto:daizongw@usc.edu" id="email" title="Email Me"
-        ><i class="far fa-envelope fa-lg"></i
-      ></a>
-      <button id="comment" title="Comment">
+    <ul class="sb-content">
+      <li>Email Me</li>
+      <li>Comment</li>
+      <li>Like</li>
+      <li>Go Top</li>
+    </ul>
+    <ul class="sb-icon">
+      <li>
+        <a href="mailto:daizongw@usc.edu">
+          <i class="far fa-envelope fa-lg"></i>
+        </a>
+      </li>
+      <li>
         <i class="fa-regular fa-comment-dots fa-lg"></i>
-      </button>
-      <button id="like" title="Like">
+      </li>
+      <li id="like">
         <i class="far fa-heart fa-lg"></i>
-      </button>
-    </div>
+      </li>
+      <li id="top">
+        <i class="fas fa-arrow-up fa-lg"></i>
+      </li>
+    </ul>
     <!-- 弹窗 -->
     <div class="dialog" id="likeBox">
       <div class="close"><i class="fa-solid fa-xmark"></i></div>
-      <div>Thank you for your support!</div>
+      <div class="dialog-content">Thank you for your support!</div>
+    </div>
+    <div class="dialog" id="mobile-warning">
+      <div class="close"><i class="fa-solid fa-xmark"></i></div>
+      <div>
+        <div class="type">Warning</div>
+        <div class="warning-content">
+          Seems like you're trying to access this website using a mobile device.
+          You're recommended to visit this website on a laptop browser
+          instead...
+        </div>
+      </div>
     </div>
     <div class="dialog" id="comment-box">
       <div class="close"><i class="fa-solid fa-xmark"></i></div>
@@ -119,8 +136,8 @@
             >
               <i class="fa-brands fa-github fa-lg"></i>
             </a>
-            <a href="#" target="_blank" title="Facebook" style="color: #4267b2">
-              <i class="fa-brands fa-facebook fa-lg"></i>
+            <a href="#" target="_blank" title="Bilibili" style="color: #00a1d6">
+              <i class="fa-brands fa-bilibili"></i>
             </a>
             <a href="#" target="_blank" title="Twitter" style="color: #1da1f2">
               <i class="fa-brands fa-twitter fa-lg"></i>
@@ -291,16 +308,39 @@
     <script>
       "use strict";
 
+      const isMobile = navigator.userAgentData.mobile;
+      if (isMobile) {
+        $("#mobile-warning").show("normal");
+      }
+
+      $(".sb-icon li").hover(
+        function () {
+          let index = $(".sb-icon li").index($(this));
+          $(".sb-content li")
+            .eq(index)
+            .css({ visibility: "visible", opacity: "0.0" })
+            .animate({ opacity: "1.0" }, 1000);
+        },
+        function () {
+          let index = $(".sb-icon li").index($(this));
+          $(".sb-content li")
+            .eq(index)
+            .animate({ opacity: "0.0" }, 200, function () {
+              $(this).css({ visibility: "hidden" });
+            });
+        }
+      );
+
       const textColor = "#2d283e";
 
       // “回顶部” 按钮
-      let topButton = $(".top div");
+      let topButton = $("#top");
       topButton.hide();
       document.addEventListener("scroll", () => {
         if (pageYOffset > 0) {
-          topButton.show();
+          topButton.slideDown();
         } else {
-          topButton.hide();
+          topButton.slideUp();
         }
       });
       topButton.on("click", () => {
@@ -339,32 +379,31 @@
         likeButton.css({ color: textColor });
       }
 
-      likeButton.on("click", () => {
-        liked = localStorage.getItem(likeKey);
-        if (liked === "true") {
-          likeButton.html('<i class="far fa-heart fa-lg"></i>');
-          likeButton.css({ color: textColor });
-          localStorage.setItem(likeKey, "false");
-        } else {
-          likeButton.html('<i class="fas fa-heart fa-lg"></i>');
-          likeButton.css({ color: "#fc8bab" });
-          localStorage.setItem(likeKey, "true");
-        }
-      });
-
       let likeBox = $("#likeBox");
       $("#likeBox .close").hide();
       let likeTimer;
       likeButton.on("click", () => {
-        liked = localStorage.getItem("liked");
+        liked = localStorage.getItem(likeKey);
         if (liked === "true") {
+          // 取消点赞
+          likeButton.html('<i class="far fa-heart fa-lg"></i>');
+          likeButton.css({ color: textColor });
+          localStorage.setItem(likeKey, "false");
+
+          // 提示语消失
+          likeBox.fadeOut("fast");
+          clearTimeout(likeTimer);
+        } else {
+          // 点赞
+          likeButton.html('<i class="fas fa-heart fa-lg"></i>');
+          likeButton.css({ color: "#fc8bab" });
+          localStorage.setItem(likeKey, "true");
+
+          // 提示语出现
           likeBox.fadeIn("fast");
           likeTimer = setTimeout(() => {
             likeBox.fadeOut("fast");
-          }, 3000);
-        } else {
-          likeBox.fadeOut("fast");
-          clearTimeout(likeTimer);
+          }, 2000);
         }
       });
 

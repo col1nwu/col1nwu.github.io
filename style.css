@@ -67,51 +67,48 @@ body {
   padding: 0 50px;
 }
 
-.top {
+.sb-icon {
   position: fixed;
-  left: 50%;
-  margin-left: 560px;
-  bottom: 30px;
-  width: 40px;
-}
-
-.top div {
-  height: 40px;
-  width: 40px;
-  text-align: center;
-  line-height: 40px;
-  border-radius: 50%;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px;
-}
-
-.top div:hover {
-  cursor: pointer;
-}
-
-.sidebar {
-  position: fixed;
-  bottom: 200px;
+  top: 600px;
   right: 20px;
   width: 45px;
 }
 
-.sidebar a,
-.sidebar button {
+.sb-icon li {
   display: block;
-  float: left;
-  margin-bottom: 5px;
+  margin: 0 0 5px 0;
   height: 45px;
-  width: 100%;
+  width: 45px;
   text-align: center;
   line-height: 45px;
   background: transparent;
   border: none;
-  border-radius: 50%;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px;
+  border-radius: 45px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px; 
 }
 
-.sidebar button:hover {
+.sb-icon li:hover {
   cursor: pointer;
+  background: var(--center-background);
+}
+
+.sb-content {
+  position: fixed;
+  top: 600px;
+  right: 70px;
+  height: 45px;
+  width: 100px;
+  text-align: right;
+}
+
+.sb-content li {
+  display: block;
+  visibility: hidden;
+  margin: 0 0 5px 0;
+  height: 45px;
+  width: 100px;
+  font-size: 15px;
+  line-height: 45px;
 }
 
 .dialog {
@@ -127,6 +124,7 @@ body {
   border-radius: 10px;
   background: var(--background);
   z-index: 2;
+  text-align: center;
 }
 
 .close {
@@ -143,12 +141,11 @@ body {
   cursor: pointer;
 }
 
-.dialog div:nth-child(2) {
+.dialog-content {
   width: 400px;
   height: 250px;
   margin: auto 0;
   line-height: 250px;
-  text-align: center;
 }
 
 #comment-box {
@@ -176,6 +173,19 @@ body {
   width: 85px;
   height: 1.5em;
   margin: 15px 25px 0 0;
+}
+
+#mobile-warning .type {
+  margin: 50px 0 20px 0;
+  height: 30px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.warning-content {
+  margin: 0 20px;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .header {
@@ -261,6 +271,7 @@ body {
   font-size: 1.1em;
   text-align: center;
   color: var(--header-text);
+  transition: 0.2s;
 }
 
 .nav div:hover {
@@ -317,6 +328,7 @@ body {
   display: block;
   margin: 10px 0;
   border-radius: 10px;
+  transition: 0.2s;
 }
 
 .list-header {
