@@ -89,7 +89,6 @@ body {
 
 .sb-icon li:hover {
   cursor: pointer;
-  background: var(--center-background);
 }
 
 .sb-content {
@@ -391,7 +390,6 @@ body {
   float: left;
   height: 70px;
   width: 333px;
-  margin-bottom: 20px;
 }
 
 .footer div:nth-of-type(1) a {
@@ -419,4 +417,11 @@ body {
   margin: auto;
   background: url(./images/cau.png) no-repeat center;
   background-size: auto 90px;
+}
+
+.credit {
+  height: 40px;
+  margin: 25px 0 0 0;
+  font-size: 16px;
+  text-align: center;
 }

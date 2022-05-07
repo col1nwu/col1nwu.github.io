@@ -48,6 +48,12 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"
+      integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </head>
   <body>
     <!-- 右侧导航栏 -->
@@ -136,7 +142,12 @@
             >
               <i class="fa-brands fa-github fa-lg"></i>
             </a>
-            <a href="#" target="_blank" title="Bilibili" style="color: #00a1d6">
+            <a
+              href="https://space.bilibili.com/249698430"
+              target="_blank"
+              title="Bilibili"
+              style="color: #00a1d6"
+            >
               <i class="fa-brands fa-bilibili"></i>
             </a>
             <a href="#" target="_blank" title="Twitter" style="color: #1da1f2">
@@ -303,11 +314,19 @@
           ></a>
         </div>
       </div>
+      <div class="credit">
+        @ Daizong Wu, 2022 <br />
+        90018
+      </div>
     </div>
 
     <script>
       "use strict";
 
+      const textColor = $("body").css("color");
+      const centerColor = $(".main").css("background-color");
+
+      // 显示“暂不支持移动端”
       const isMobile = navigator.userAgentData.mobile;
       if (isMobile) {
         $("#mobile-warning").show("normal");
@@ -315,6 +334,7 @@
 
       $(".sb-icon li").hover(
         function () {
+          $(this).animate({ backgroundColor: centerColor }, 200);
           let index = $(".sb-icon li").index($(this));
           $(".sb-content li")
             .eq(index)
@@ -322,6 +342,7 @@
             .animate({ opacity: "1.0" }, 1000);
         },
         function () {
+          $(this).animate({ backgroundColor: "transparent" }, 200);
           let index = $(".sb-icon li").index($(this));
           $(".sb-content li")
             .eq(index)
@@ -330,8 +351,6 @@
             });
         }
       );
-
-      const textColor = "#2d283e";
 
       // “回顶部” 按钮
       let topButton = $("#top");
