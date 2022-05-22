@@ -90,7 +90,7 @@ body {
 
 .sb-icon {
   position: fixed;
-  top: 600px;
+  top: 60%;
   right: 20px;
   width: 45px;
 }
@@ -114,7 +114,7 @@ body {
 
 .sb-content {
   position: fixed;
-  top: 600px;
+  top: 60%;
   right: 70px;
   height: 45px;
   width: 100px;
@@ -202,11 +202,19 @@ body {
   margin: 15px 25px 0 0;
 }
 
+#likeBox .close {
+  display: none;
+}
+
 #mobile-warning .type {
   margin: 50px 0 20px 0;
   height: 30px;
   font-size: 25px;
   font-weight: bold;
+}
+
+#mobile-warning .close {
+  display: none;
 }
 
 .warning-content {

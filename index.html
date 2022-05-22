@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Homepage of Daizong Wu" />
     <title>Daizong Wu's Homepage</title>
 
     <link
@@ -69,7 +70,7 @@
           <i class="far fa-envelope fa-lg"></i>
         </a>
       </li>
-      <li>
+      <li id="comment">
         <i class="fa-regular fa-comment-dots fa-lg"></i>
       </li>
       <li id="like">
@@ -346,6 +347,7 @@
         $("#mobile-warning").show("normal");
       }
 
+      // 侧边栏显示提示语
       $(".sb-icon li").hover(
         function () {
           $(this).animate({ backgroundColor: centerColor }, 200);
@@ -353,7 +355,7 @@
           $(".sb-content li")
             .eq(index)
             .css({ visibility: "visible", opacity: "0.0" })
-            .animate({ opacity: "1.0" }, 1000);
+            .animate({ opacity: "1.0" }, 200);
         },
         function () {
           $(this).animate({ backgroundColor: "transparent" }, 200);
@@ -413,7 +415,6 @@
       }
 
       let likeBox = $("#likeBox");
-      $("#likeBox .close").hide();
       let likeTimer;
       likeButton.on("click", () => {
         liked = localStorage.getItem(likeKey);
